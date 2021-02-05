@@ -49,6 +49,12 @@
               class="mb-1"
               tabindex="5"
             ></v-autocomplete>
+
+            <v-switch
+              v-model="pedido.aprobado"
+              v-if="!nuevo"
+              :label="`${pedido.aprobado ? 'Aprobado' : 'Desaprobado'}`"
+            ></v-switch>
           </v-col>
           <v-col cols="12" md="6">
             <v-text-field
@@ -151,6 +157,7 @@ export default {
           genero: "",
           email: "",
           monto: "",
+          aprobado: false,
         };
       }
     },
